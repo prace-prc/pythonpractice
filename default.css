@@ -1,0 +1,13 @@
+h1 {
+    /* 2023.05. 제목을 빨간색으로 합니다 */
+    color : #03d6c7; 
+    text-align: center;
+}
+
+body {
+    color : red;
+    height: 50vh;
+    background-color: #000;
+    background-image: url('background.jpg');
+    background-position: center center;
+}
