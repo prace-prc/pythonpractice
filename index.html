@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS 실습</title>
     <!-- 내부(Internal) 스타일 -->
-    <style>
-        h1 {color : red;}
-    </style>
+<!--    <style>-->
+<!--        h1 {color : red;}-->
+<!--    </style>-->
     <!-- 외부(External) 스타일 -->
     <link rel="stylesheet" href="default.css">
 </head>
@@ -18,7 +18,27 @@
     <!-- 인라인(Inline) 스타일 -->
     <h1 style="color: blue;">h1 텍스트</h1>
     <div>
+        <div id="container">
+            <div class="left-side">
+                <h1>환영합니다</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <span class="highlight">강조된 텍스트입니다.</span> Nulla a mollis
+                    lectus.
+                </p>
+            </div>
 
+            <div class="right-side">
+                <h1>안녕하세요</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <span class="highlight">강조된 텍스트입니다.</span> Nulla a mollis
+                    lectus.
+                </p>
+            </div>
+            <!-- <img src="background.jpg" alt="background"> -->
+        </div>
+       
     </div>
 </body>
 </html>
