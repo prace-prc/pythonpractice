@@ -1,15 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
         <title>My First Webpage</title>
     </head>
     <body>
-        <h1>Headings</h1>
-        <h1>Welcome (h1)</h1>
-        <h2>Welcome (h2)</h2>
-        <h3>Welcome (h3)</h3>
-        <h4>Welcome (h4)</h4>
-        <h5>Welcome (h5)</h5>
-        <h6>Welcome (h6)</h6>
+        <h1 id="h1">Registration Form</h1>
+        <form>
+            <fieldset>
+                <legend>Account</legend>
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">이메일</label>
+                <input type="text" id="email" name="email">
+                <br>
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password">
+            </fieldset>
+            <fieldset>
+                <legend>User Info</legend>
+                <label for="location">주소</label>
+                <select name="location" id="location">
+                    <option value="MA">MA</option>
+                    <option value="NY">NY</option>
+                    <option value="CA">CA</option>
+                </select>
+                <br>
+                <h4>성별</h4>
+                <label for="gender1">남성</label>
+                <input type="radio" name="gender" id="gender1" value="Male">
+                <label for="gender2">여성</label>
+                <input type="radio" name="gender" id="gender2" value="FeMale">
+                <br>
+                <label for="gender11">남성</label>
+                <input type="checkbox" name="gender" id="gender11" value="Male">
+                <label for="gender22">여성</label>
+                <input type="checkbox" name="gender" id="gender22" value="FeMale">
+
+            </fieldset>
+            <input type="submit" value="등록">
+        </form>
+
     </body>
 </html>
