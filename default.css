@@ -1,0 +1,133 @@
+h1 {
+    color : red;
+}
+
+.wrapper {
+    border: #000 1px solid;
+    width: 600px;
+    height: 400px;
+    position: relative;
+    left: 50px;
+    top: 100px;
+}
+
+.inside {
+    border: #ff0000 1px solid;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+}
+
+a:hover {
+    color: red;
+    font-weight: bold;
+}
+
+a:active {
+    color: green;
+    font-weight: bold;
+}
+
+.myForm input:focus {
+    background: pink;
+    width: 300px;
+}
+
+.myList li:first-child {
+    color: green;
+    font-weight: bold;
+}
+
+.myList li:last-child {
+    color: red;
+    font-weight: bold;
+}
+
+.myList li:nth-child(3n+3) {
+    color: orange;
+    font-weight: bold;
+}
+
+.myList li:nth-child(even) {
+    background: yellow;
+    font-weight: bold;
+}
+
+.myList li:nth-child(odd) {
+    background: grey;
+    font-weight: bold;
+}
+
+#rounded1 {
+    background: lightblue;
+    color: white;
+    width: 200px;
+    padding: 10px;
+    height: 140px;
+    border-radius: 50px;
+}
+
+#rounded2{
+    background: orange;
+    color: white;
+    width: 200px;
+    padding: 10px;
+    height: 140px;
+    border-radius: 30px;
+}
+
+#rounded3{
+    background: pink;
+    color: white;
+    width: 200px;
+    padding: 10px;
+    height: 140px;
+    border-radius: 70px;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+#border-img {
+    border: 10px solid;
+    border-width: 10px;
+    border-style: solid;
+    border-image: url('border.png') 30 round;
+}
+
+#my-bg {
+    background-image: url('border.png'), url('background.jpg');
+    background-position: left top, right bottom;
+    background-repeat: repeat, no-repeat;
+    padding: 20px;
+    background-size: 50px 50px, cover;
+}
+
+#grad1 {
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(to right, red, yellow);
+}
+
+#grad2 {
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(to bottom right, pink, purple);
+}
+
+#grad3 {
+    width: 200px;
+    height: 50px;
+    background: radial-gradient(red, yellow, green);
+}
+
+#grad4 {
+    width: 200px;
+    height: 50px;
+    background: radial-gradient(circle, lightblue, darkblue);
+}
