@@ -140,11 +140,11 @@ h1.text3 {
 #border-img {
     border: 10px solid;
     padding: 10px;
-    border-image: url('border.png') 30 round;
+    border-image: url('HTML-CSS실습/border.png') 30 round;
 }
 
 #my-bg {
-    background-image: url('border.png'), url('background.jpg');
+    background-image: url('HTML-CSS실습/border.png'), url('HTML-CSS실습/background.jpg');
     background-position: left top, right bottom;
     background-repeat: repeat, no-repeat;
     padding: 20px;
