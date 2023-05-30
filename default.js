@@ -1,27 +1,50 @@
 
-var num = "20"
-num = num.toString();
-console.log(typeof num);
+var input1 = prompt("Enter first number : ");
+var num1  = parseInt(input1);
 
-var number = 20;
-console.log(typeof number);
+var num2 = parseInt(prompt("Enter second number : "));
+var lineBreak = "<br/>";
 
-number = number.toString();
-console.log(number, typeof number);
+var result = num1 + num2;
+document.write("the sum is : " + result + lineBreak);
 
-var x = 2.56789
-console.log(x.toFixed(1), typeof x.toFixed(1));
-console.log(x.toFixed(2));
+result = num1 - num2;
+document.write("the sub is : " + result + lineBreak);
 
-console.log(x.toPrecision(1), typeof x.toPrecision(1));
-console.log(x.toPrecision(2));
+result = num1 * num2;
+document.write("The multiplication is : " + result + lineBreak);
+
+result = num1 / num2;
+document.write("The division is : " + result + lineBreak);
+
+result = num1 % num2;
+document.write("The remainder is : " + result + lineBreak);
 
 
-console.log(Number(true));
-console.log(Number(false));
-console.log(Number(" 10"));
-console.log(Number(" 10 "));
-console.log(Number("10.25"));
+
+// var num = "20"
+// num = num.toString();
+// console.log(typeof num);
+//
+// var number = 20;
+// console.log(typeof number);
+//
+// number = number.toString();
+// console.log(number, typeof number);
+//
+// var x = 2.56789
+// console.log(x.toFixed(1), typeof x.toFixed(1));
+// console.log(x.toFixed(2));
+//
+// console.log(x.toPrecision(1), typeof x.toPrecision(1));
+// console.log(x.toPrecision(2));
+//
+//
+// console.log(Number(true));
+// console.log(Number(false));
+// console.log(Number(" 10"));
+// console.log(Number(" 10 "));
+// console.log(Number("10.25"));
 
 
 
