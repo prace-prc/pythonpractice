@@ -1,18 +1,42 @@
-var lastName = "홍";
-var firstName = "길동";
 
-var fullName = lastName + firstName;
+// var text = prompt("Enter your name:");
+// document.write("Your name : " + text + "<br/>");
+//
+//
+// var len = text.length;
+// document.write("Number of characters : " + len + "<br/>");
+//
+// document.write(text.charAt(2) + "<br/>");
+//
+// document.write(text.toUpperCase() + "<br/>");
+// document.write(text.toLowerCase() + "<br/>");
+//
+// var text1 = "hi, ";
+// var text2 = "bye";
+// var text3 = text1.concat(text2);
+// document.write(text3 + "<br/>");
+// document.write(text4 + "<br/>");
 
-console.log(fullName);
-console.log("Today is" + " a " + "beautiful day");
-console.log("My name is " + fullName);
+var text4 = "hello";
+var result = text4.slice(1,2);
+document.write(result + "<br/>");
 
-var num1 = 20;
-var num2 = 30;
-var sum = num1 + num2;
-console.log(num1 + num2);
-console.log("" + num1 + num2);
-console.log(num1 + " + " + num2 + " = " + sum);
+
+// var lastName = "홍";
+// var firstName = "길동";
+//
+// var fullName = lastName + firstName;
+//
+// console.log(fullName);
+// console.log("Today is" + " a " + "beautiful day");
+// console.log("My name is " + fullName);
+//
+// var num1 = 20;
+// var num2 = 30;
+// var sum = num1 + num2;
+// console.log(num1 + num2);
+// console.log("" + num1 + num2);
+// console.log(num1 + " + " + num2 + " = " + sum);
 
 // var name = "이승훈";
 // var age = 29;
