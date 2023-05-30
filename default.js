@@ -1,24 +1,31 @@
 
+var base = parseFloat(prompt("밑변 입력 : "));
+var height = parseFloat(prompt("높이 입력 : "))
+
+var area = base * height * 0.5;
+
+document.write("삼각형의 넓이 : " + area);
+
 var input1 = prompt("Enter first number : ");
 var num1  = parseInt(input1);
-
-var num2 = parseInt(prompt("Enter second number : "));
-var lineBreak = "<br/>";
-
-var result = num1 + num2;
-document.write("the sum is : " + result + lineBreak);
-
-result = num1 - num2;
-document.write("the sub is : " + result + lineBreak);
-
-result = num1 * num2;
-document.write("The multiplication is : " + result + lineBreak);
-
-result = num1 / num2;
-document.write("The division is : " + result + lineBreak);
-
-result = num1 % num2;
-document.write("The remainder is : " + result + lineBreak);
+//
+// var num2 = parseInt(prompt("Enter second number : "));
+// var lineBreak = "<br/>";
+//
+// var result = num1 + num2;
+// document.write("the sum is : " + result + lineBreak);
+//
+// result = num1 - num2;
+// document.write("the sub is : " + result + lineBreak);
+//
+// result = num1 * num2;
+// document.write("The multiplication is : " + result + lineBreak);
+//
+// result = num1 / num2;
+// document.write("The division is : " + result + lineBreak);
+//
+// result = num1 % num2;
+// document.write("The remainder is : " + result + lineBreak);
 
 
 
