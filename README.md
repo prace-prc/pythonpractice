@@ -1,19 +1,10 @@
 # python6th
 
+## 5월 26일
 
-```html
-<h1 class="text1">Hello World</h1>
-<h1 class="text2">Hello World</h1>
-<h1 class="text3">Hello World</h1>
+- CSS 실습 (HTML-CSS실습/default20230525.css)
 
-<div id="box1"></div>
-<br>
-<div class="card">
-    <div class="card-header">
-        <h1>1</h1>
-    </div>
-    <div class="card-container">
-        <p>This is a card</p>
-    </div>
-</div>
-```
+## 5월 30일
+
+- 자바스크립트 실습(index.html)
+- 

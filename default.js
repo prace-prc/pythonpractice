@@ -1,4 +1,33 @@
 
+var num = "20"
+num = num.toString();
+console.log(typeof num);
+
+var number = 20;
+console.log(typeof number);
+
+number = number.toString();
+console.log(number, typeof number);
+
+var x = 2.56789
+console.log(x.toFixed(1), typeof x.toFixed(1));
+console.log(x.toFixed(2));
+
+console.log(x.toPrecision(1), typeof x.toPrecision(1));
+console.log(x.toPrecision(2));
+
+
+console.log(Number(true));
+console.log(Number(false));
+console.log(Number(" 10"));
+console.log(Number(" 10 "));
+console.log(Number("10.25"));
+
+
+
+
+
+
 // var text = prompt("Enter your name:");
 // document.write("Your name : " + text + "<br/>");
 //
@@ -17,9 +46,9 @@
 // document.write(text3 + "<br/>");
 // document.write(text4 + "<br/>");
 
-var text4 = "hello";
-var result = text4.slice(1,2);
-document.write(result + "<br/>");
+// var text4 = "hello";
+// var result = text4.slice(1,2);
+// document.write(result + "<br/>");
 
 
 // var lastName = "홍";
