@@ -52,3 +52,24 @@ console.log(num1 + num2);
 console.log("" + num1 + num2);
 console.log(num1 + " + " + num2 + " = " + sum);
 
+var text = prompt("Enter your name:");
+document.write("Your name : " + text + "<br/>");
+
+var len = text.length;
+document.write("Number of characters : " + len + "<br/>");
+
+document.write(text.charAt(2) + "<br/>");
+
+document.write(text.toLocaleUpperCase() + "<br/>")
+document.write(text.toLocaleLowerCase() + "<br/>")
+
+var text1 = "hi, ";
+var text2 = "bye";
+var text3 = text1.concat(text2);
+var text4 = text1 + text2;
+document.write(text3 + "<br/>");
+document.write(text4 + "<br/>");
+
+var text5 = "hello";
+var result = text5.slice(0,3);
+document.write(result + "<br/>");
