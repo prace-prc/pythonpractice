@@ -35,3 +35,20 @@ var lineBreak = "<br/>"
 document.write("이름: " + name + lineBreak);
 document.write("나이: " + age + lineBreak);
 document.write("학점: " + cgpa + lineBreak);
+
+var lastName = "홍";
+var firstName = "길동";
+
+var fullName = lastName + firstName;
+
+console.log(fullName);
+console.log("Today is" + " a " + "beautiful day");
+console.log("My name is " + fullName);
+
+var num1 = 20;
+var num2 = 30;
+var sum = num1 + num2;
+console.log(num1 + num2);
+console.log("" + num1 + num2);
+console.log(num1 + " + " + num2 + " = " + sum);
+
