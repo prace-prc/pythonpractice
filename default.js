@@ -1,15 +1,15 @@
-// document.write("Hello World");
-// document.write("<h1>Welcome to JS Program</h1>")
-// document.write("<h2>Welcome to JS Program</h2>")
+ document.write("Hello World");
+ document.write("<h1>Welcome to JS Program</h1>")
+ document.write("<h2>Welcome to JS Program</h2>")
 
-// console.log('Welcome JS Program');
-// console.info('Welcome JS Program');
-// console.warn('Welcome JS Program');
-// console.error('Welcome JS Program');
+ console.log('Welcome JS Program');
+ console.info('Welcome JS Program');
+ console.warn('Welcome JS Program');
+ console.error('Welcome JS Program');
 
-// alert('Welcome JS Program');
-// var a = prompt('Welcome JS Program');
-// console.log(a);
+ alert('Welcome JS Program');
+ var a = prompt('Welcome JS Program');
+ console.log(a);
 
 console.log(123, typeof 123);
 console.log(123.5, typeof 123.5);
@@ -115,3 +115,10 @@ document.write("the division is : " + result + lineBreak);
 
 result = num1 % num2;
 document.write("the remainder is : " + result + lineBreak);
+
+var base = parseFloat(prompt("밑변 입력 : "));
+var height = parseFloat(prompt("높이 입력 : "));
+
+var area = base * height * 0.5;
+
+document.write("삼각형의 넓이 : " + area);
