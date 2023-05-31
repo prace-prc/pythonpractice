@@ -223,19 +223,34 @@
 //         break;
 // }
 
-var i = 1;
+// var i = 1;
+//
+// do {
+//     document.write("
+// } while (i < 1)
+// // i < 10도 실습할것
+//
+// document.write("==================<br/>")
+//
+// var j = 1;
+//
+// while(j < 1){
+//     document.write("멋쟁이사자j : " + j + "<br/>");
+//     j++;
+// }
 
-do {
-    document.write("멋쟁이사자i : " + i + "<br/>");
-    i++;
-} while (i < 1)
-// i < 10도 실습할것
+// break와 continue 이해하기
+for (var i = 1; i <= 100; i++) {
+    if (i == 20) {
+        break;
+    }
+    document.write(i + "<br/>");
+}
 
-document.write("==================<br/>")
-
-var j = 1;
-
-while(j < 1){
-    document.write("멋쟁이사자j : " + j + "<br/>");
-    j++;
+// continue 사용
+for (var k = 1; k <= 100; k++) {
+    if (k == 20){
+        continue;
+    }
+    document.write(k + "<br/>");
 }
