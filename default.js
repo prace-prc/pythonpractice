@@ -19,7 +19,8 @@ students.push("정만");
 console.log("push 후 학생 배열 = " + students);
 
 // 배열의 요소 삭제하기
-students.pop()
+var element = students.pop() // 마지막 요소를 뱉어냄.
+console.log(element);
 console.log("pop 후 학생 배열 = " + students);
 
 // 배열 연결하기
