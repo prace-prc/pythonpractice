@@ -1,15 +1,15 @@
-//  document.write("Hello World");
-//  document.write("<h1>Welcome to JS Program</h1>")
-//  document.write("<h2>Welcome to JS Program</h2>")
+// document.write("Hello World");
+// document.write("<h1>Welcome to JS Program</h1>")
+// document.write("<h2>Welcome to JS Program</h2>")
 //
-//  console.log('Welcome JS Program');
-//  console.info('Welcome JS Program');
-//  console.warn('Welcome JS Program');
-//  console.error('Welcome JS Program');
+// console.log('Welcome JS Program');
+// console.info('Welcome JS Program');
+// console.warn('Welcome JS Program');
+// console.error('Welcome JS Program');
 //
-//  alert('Welcome JS Program');
-//  var a = prompt('Welcome JS Program');
-//  console.log(a);
+// alert('Welcome JS Program');
+// var a = prompt('Welcome JS Program');
+// console.log(a);
 //
 // console.log(123, typeof 123);
 // console.log(123.5, typeof 123.5);
@@ -122,12 +122,12 @@
 // var area = base * height * 0.5;
 //
 // document.write("삼각형의 넓이 : " + area);
-
+//
 // var cels = parseFloat(prompt("섭씨 온도 입력: "));
 // var farn = cels * (9/5) + 32;
 //
 // document.write("화씨 온도: " + farn);
-
+//
 // var num1 = 20;
 // var num2 = 10;
 // var num3 = "10";
@@ -156,32 +156,69 @@
 // var num2 = parseInt(prompt('두번째 숫자 입력: '));
 //
 // if(num1 > num2) {
-//  console.log("큰 수는 num1 : ", num1);
+//     console.log("큰 수는 num1 : ", num1);
 // }
 //
 // if(num1 < num2) {
-//  console.log("큰 수는 num2 : ", num2);
+//     console.log("큰 수는 num2 : ", num2);
 // }
 //
 // if(num1 == num2){
-//  console.log("같은 수");
+//     console.log("같은 수");
 // }
 //
 // if(num1 > num2){
-//  console.log("큰 수는 num1 : ", num1);
+//     console.log("큰 수는 num1 : ", num1);
 // } else if (num1 < num2) {
-//  console.log("큰 수는 num2 : ", num2);
+//     console.log("큰 수는 num2 : ", num2);
 // } else {
-//  console.log("같은 수");
+//     console.log("같은 수");
+// }
+//
+// var letter = prompt("Enter a letter : ");
+//
+// letter = letter.toLowerCase();
+//
+// if(letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u'){
+//  console.log('Vowel');
+// } else {
+//  console.log('Consonant');
 // }
 
-var letter = prompt("Enter a letter : ");
+var digit = parseInt(prompt("숫자 입력 :"));
 
-letter = letter.toLowerCase();
-
-if(letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u'){
- console.log('Vowel');
-} else {
- console.log('Consonant');
+switch (digit) {
+    case 0:
+        document.write("Zero");
+        break;
+    case 1:
+        document.write("One");
+        break;
+    case 2:
+        document.write("Two");
+        break;
+    case 3:
+        document.write("Three");
+        break;
+    case 4:
+        document.write("Four");
+        break;
+    case 5:
+        document.write("Five");
+        break;
+    case 6:
+        document.write("Six");
+        break;
+    case 7:
+        document.write("Seven");
+        break;
+    case 8:
+        document.write("Eight");
+        break;
+    case 9:
+        document.write("Nine");
+        break;
+    default:
+        document.write("Not a digit");
+        break;
 }
-
