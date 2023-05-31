@@ -1,39 +1,64 @@
 
-var names = new Array(20);
+var date = new Date();
+console.log(date);
 
-names[0] = "지훈";
-names[1] = "은영";
+var year = date.getFullYear();
+console.log(year);
 
-console.log(names[1]);
+// 월 정보 얻기
+var month = date.getMonth();
+console.log(month);
 
-// 값을 가진 배열 생성하기
-var students = ["지훈", "은영", "수진", "준호"];
-console.log("students = " + students);
-console.log("2번 인덱스의 학생: ", students[2]);
+// 날짜 정보 얻기
+var currentDate = date.getDate();
+console.log(currentDate);
 
-// 배열의 길이 찾기
-console.log("학생 배열의 길이: ", students.length);
+// 요일 정보 얻기
+var currentDay = date.getDay();
+console.log(currentDay);
 
-// 배열의 요소 추가하기
-students.push("정만");
-console.log("push 후 학생 배열 = " + students);
+// 시간 정보 얻기
+var currentHour = date.getHours();
+console.log(currentHour);
 
-// 배열의 요소 삭제하기
-var element = students.pop() // 마지막 요소를 뱉어냄.
-console.log(element);
-console.log("pop 후 학생 배열 = " + students);
+// 분 정보
+var currentMinutes = date.getMinutes();
+console.log(currentMinutes);
 
-// 배열 연결하기
-var numArray1 = [10, 20];
-var numArray2 = [30, 40, 50, 60];
-var numArray = numArray1.concat(numArray2);
+console.log('getTime :', date.getTime());
 
-console.log("배열 잇기(concatenation) : " + numArray );
-
-console.log(numArray1 + numArray2);
-
-
-
+// var names = new Array(20);
+//
+// names[0] = "지훈";
+// names[1] = "은영";
+//
+// console.log(names[1]);
+//
+// // 값을 가진 배열 생성하기
+// var students = ["지훈", "은영", "수진", "준호"];
+// console.log("students = " + students);
+// console.log("2번 인덱스의 학생: ", students[2]);
+//
+// // 배열의 길이 찾기
+// console.log("학생 배열의 길이: ", students.length);
+//
+// // 배열의 요소 추가하기
+// students.push("정만");
+// console.log("push 후 학생 배열 = " + students);
+//
+// // 배열의 요소 삭제하기
+// var element = students.pop() // 마지막 요소를 뱉어냄.
+// console.log(element);
+// console.log("pop 후 학생 배열 = " + students);
+//
+// // 배열 연결하기
+// var numArray1 = [10, 20];
+// var numArray2 = [30, 40, 50, 60];
+// var numArray = numArray1.concat(numArray2);
+//
+// console.log("배열 잇기(concatenation) : " + numArray );
+//
+// console.log(numArray1 + numArray2);
 
 // IIFE 예제
 // (function display(message) {
