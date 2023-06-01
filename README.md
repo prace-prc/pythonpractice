@@ -12,3 +12,7 @@
 
 - 자바스크립트 실습 완료 (Javascript 실습/[default.js](Javascript%20%BD%C7%BD%C0%2Fdefault.js))
 - 웹서버 실습 시작
+
+## 6월 1일
+
+- 부트스트랩 컴포넌트 실습 시작
