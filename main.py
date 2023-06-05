@@ -1,14 +1,14 @@
-print('Hello, World!')
-
-# 비교 연산자
+# 논리 연산자
 a = 5
 b = 2
-print('a:', a, 'b:', b)
+c = 3
+d = 200
 
-print('a < b: ', a < b)
+print('AND 연산자')
+print('a > b and a < c:', a > b and a < c)
 
-print('a <= b: ', a <= b)
+print("OR 연산자")
+print('a > b or a < c:', a > b or a < c)
 
-print('a == b: ', a == b)
-
-print('a != b: ', a != b)
+print('NOT 연산자')
+print('not(a < b): ', not(a < b))
