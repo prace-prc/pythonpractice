@@ -173,9 +173,31 @@
 # vn1 = complex(n1)
 #
 # print(vn1, type(vn1))
+#
+# n5 = "Kim", "Bae", "Park", "Lee"
+# vn5 = list(n5)
+#
+# print(n5,type(n5))
+# print(vn5, type(vn5))
+#
+# print("1")
+# print("2", end='')
+# print("3")
+# print("4")
+#
+# data = [10, 20, -50, 21.3, 'LikeLion']
+#
+# print(data)
 
-n5 = "Kim", "Bae", "Park", "Lee"
-vn5 = list(n5)
+print("Like", "Share", "Subscribe", sep='')
+print("Like", "Share", "Subscribe", sep='***')
 
-print(n5,type(n5))
-print(vn5, type(vn5))
+print("Like", "Share", "Subscribe", sep='***', end='\t')
+print("Like", "Share", "Subscribe", sep='***', end='\n')
+
+m = 40
+print("value: ", m)
+
+name = "황주원"
+age = 27
+print("My name is", name, "and My age is", age)
