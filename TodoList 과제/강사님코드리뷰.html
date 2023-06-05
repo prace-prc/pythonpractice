@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo List</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .writeArea {
+            border: 1px solid;
+            border-radius: 8px;
+            display: flex;
+        }
+
+        #todo {
+            flex-grow: 1;
+        }
+
+        button {
+            float: right;
+            align-items: center;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+<body>
+<h1>Todo List</h1>
+
+<div class="container mt-4">
+    <div class="writeArea">
+        <div id="todo"
+             contenteditable="true"
+             oninput="saveText()"
+        >
+        </div>
+        <button type="submit"
+                class="btn btn-primary"
+                onclick="addTodo()"
+        >입력
+        </button>
+    </div>
+    <div class="todoArea">
+        <br/>
+        <ul class="list-group" id="todoList">
+
+        </ul>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+<script>
+    function saveText(val) {
+        console.log(val);
+        var todo = document.getElementById("todo").innerHTML;
+        localStorage.setItem('todo', todo);
+    }
+
+    function addTodo() {
+        var text = localStorage.getItem('todo');
+
+        var todoList = localStorage.getItem('todoList')?.split('|') || [];
+        console.log(todoList);
+        todoList.push(text);
+        localStorage.setItem('todoList', todoList.join('|'));
+
+        var list = document.getElementById('todoList');
+        var item = document.createElement('li');
+        item.innerText = text;
+        item.classList.add('list-group-item');
+
+        var removeButton = document.createElement('button');
+        removeButton.innerText = '삭제';
+        removeButton.classList.add('btn', 'btn-danger')
+        removeButton.addEventListener('click', function () {
+            var todoList = localStorage.getItem('todoList')?.split('|') || [];
+            var removeIndex = todoList.indexOf(item.innerText.substring(0, item.innerText.length-3));
+            console.log(removeIndex);
+            todoList.splice(removeIndex, 1);
+            localStorage.setItem('todoList', todoList.join('|'));
+            list.removeChild(item);
+        })
+
+        item.appendChild(removeButton);
+        list.appendChild(item);
+        document.getElementById("todo").innerHTML = '';
+    }
+
+    var todoList = localStorage.getItem('todoList')?.split('|') || [];
+    todoList.forEach((todoText) => {
+        var list = document.getElementById('todoList');
+        var item = document.createElement('li');
+        item.innerText = todoText;
+        item.classList.add('list-group-item');
+
+        var removeButton = document.createElement('button');
+        removeButton.innerText = '삭제';
+        removeButton.classList.add('btn', 'btn-danger')
+        const clickFunction = function () {
+            console.log('click');
+        };
+        item.addEventListener('click', clickFunction);
+        item.removeEventListener('click', clickFunction);
+
+
+        removeButton.addEventListener('mousedown', function () {
+            var todoList = localStorage.getItem('todoList')?.split('|') || [];
+            var removeIndex = todoList.indexOf(item.innerText.substring(0, item.innerText.length-3));
+            console.log(removeIndex);
+            todoList.splice(removeIndex, 1);
+            localStorage.setItem('todoList', todoList.join('|'));
+            list.removeChild(item);
+        })
+
+        item.appendChild(removeButton);
+        // item.addEventListener('mousedown', function(event) {
+        //     console.log(event.target.style.textDecoration);
+        //     if(event.target.style.textDecoration === 'line-through') {
+        //         event.target.style.textDecoration = null;
+        //     } else {
+        //         event.target.style.textDecoration = "line-through";
+        //     }
+        //     console.log(event.target);
+        //     console.log('mousedown!!!');
+        // })
+        list.appendChild(item);
+    });
+
+
+</script>
+</body>
+</html>
