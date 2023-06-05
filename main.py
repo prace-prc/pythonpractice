@@ -1,17 +1,35 @@
-# 변수 선언
-a = 10
-b = 3.14
-c = "Hello, World!"
-d = [1, 2, 3]
-e = (4, 5, 6)
-f = {7, 8, 9}
-g = {"apple": 1, "banana": 2, "orange": 3}
+# 덧셈
+a = 4
+b = 2
+total = a + b
+print('total = a + b:', total)
 
-# 데이터 타입 출력
-print("a: ", type(a))
-print("b: ", type(b))
-print("c: ", type(c))
-print("d: ", type(d))
-print("e: ", type(e))
-print("f: ", type(f))
-print("g: ", type(g))
+#뺄셈
+a = 4
+b = 2
+total = a - b
+print('total = a - b: ', total)
+
+#곱셈
+total = a * b
+print('total = a * b: ', total)
+
+#나눗셈
+print('a / b: ', a / b)
+
+#나머지
+a = 5
+b = 2
+print('a % b: ', a % b)
+
+#거듭제곱
+print('a ** b: ', a ** b)
+
+# 몫 (양수)
+print('a // b : ', a // b)
+
+# 몫 (음수)
+a = -5
+print('a // b(음수) :', a // b)
+
+
