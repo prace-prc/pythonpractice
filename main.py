@@ -15,49 +15,62 @@
 # print("e: ", type(e))
 # print("f: ", type(f))
 # print("g: ", type(g))
-
-# 덧셈
-a = 4
-b = 2
-total = a + b
-print('total = a + b:', total)
-
-# 뺼셈
-total = a - b
-print('total = a - b:', total)
-
-# 곱셈
-total = a * b
-print('total = a * b:', total)
-
-# 나눗셈
-total = a / b
-print('total = a / b:', total)
-
+#
+# # 덧셈
+# a = 4
+# b = 2
+# total = a + b
+# print('total = a + b:', total)
+#
+# # 뺼셈
+# total = a - b
+# print('total = a - b:', total)
+#
+# # 곱셈
+# total = a * b
+# print('total = a * b:', total)
+#
+# # 나눗셈
+# total = a / b
+# print('total = a / b:', total)
+#
+# a = 5
+# b = 2
+# print('a % b: ', a % b)
+#
+# # 거듭제곱
+# print('a ** b', a ** b)
+#
+# # 몫 (양수)
+# print(' a // b :', a // b)
+#
+# # 몫 (음수)
+# a = -5
+# print('a // b(음수) :', a // b)
+#
+# # 비교 연산자
+# a = 5
+# b = 2
+# print('a:', a, 'b:', b)
+#
+# print('a < b: ', a < b)
+#
+# print('a <= b ', a <= b)
+#
+# print('a == b ', a == b)
+#
+# print('a != b ', a != b)
+# 논리 연산자
 a = 5
 b = 2
-print('a % b: ', a % b)
+c = 3
+d = 200
 
-# 거듭제곱
-print('a ** b', a ** b)
+print('AND 연산자')
+print('a > b and a < c:', a > b and a > c)
 
-# 몫 (양수)
-print(' a // b :', a // b)
+print('OR 연산자')
+print('a > b or a < c:', a > b or a < c)
 
-# 몫 (음수)
-a = -5
-print('a // b(음수) :', a // b)
-
-# 비교 연산자
-a = 5
-b = 2
-print('a:', a, 'b:', b)
-
-print('a < b: ', a < b)
-
-print('a <= b ', a <= b)
-
-print('a == b ', a == b)
-
-print('a != b ', a != b)
-
+print('NOT 연산자')
+print('not(a < b):', not(a < b))
