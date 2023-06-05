@@ -74,36 +74,82 @@
 #
 # print('NOT 연산자')
 # print('not(a < b):', not(a < b))
+#
+# # 할당 연산자
+# a = 10
+# b = 20
+# m = 15
+#
+# y = a + b
+# print(y)
+#
+# m += 10 # m = m + 10
+# print(m)
+#
+# m **= 2
+# print(m)
+#
+# m //= 10
+# print(m)
+#
+# #비트 연산자
+# a = 10
+# b = 15
+#
+# print('a: ', bin(a))
+#
+# print('b: ', bin(b))
+#
+# print('~a =', ~a, bin(~a))
+#
+# print('a & b: ', a & b)
+#
+# print('a << 2: ', a << 2)
+#
+# print('a >> 2: ', bin(a >> 2))
+#
+# # 멤버 in 연산자
+#
+# st1 = "Welcome to Home"
+# print("to" not in st1)
+#
+# st2 = "Welcome top Home"
+# print("to" not in st2)
+#
+# st3 = "Welcome to Home"
+# print("subs" not in st3)
+#
+# # is 연산자
+#
+# a = 10
+# b = 10
+# print(a is not b)
+#
+# a = 10
+# b = '10'
+# print(a is not b)
 
-# 할당 연산자
-a = 10
-b = 20
-m = 15
+# 암시적 타입 변환
+a = 5
+b = 2
+print(b, type(b))
+value = a / b
+print(value)
+print(type(value))
 
-y = a + b
-print(y)
+x = 10
+y = 5.5
+total = x + y
+print(total)
+print(type(total))
 
-m += 10 # m = m + 10
-print(m)
+j = "Hello"
+k = "like lion"
+p = j + k
+print(p)
+print(type(p))
 
-m **= 2
-print(m)
-
-m //= 10
-print(m)
-
-#비트 연산자
-a = 10
-b = 15
-
-print('a: ', bin(a))
-
-print('b: ', bin(b))
-
-print('~a =', ~a, bin(~a))
-
-print('a & b: ', a & b)
-
-print('a << 2: ', a << 2)
-
-print('a >> 2: ', bin(a >> 2))
+q = 20
+u = '10'
+r = q + u # 오류 발생
+print(r)
