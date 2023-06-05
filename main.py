@@ -1,20 +1,19 @@
-data = [10, 20, -50, 21.3, 'LikeLion']
-print(data)
+name = input()
 
-print("Like", "Share", "Subscribe", sep='')
-print("Like", "Share", "Subscribe", sep='***')
+print(name)
 
-print("Like", "Share", "Subscribe", sep='***', end='\t')
-print("Like", "Share", "Subscribe", sep='***', end='\n')
+name = input("Your Name: ")
+mobile = input("Enter Your Mobile Number:")
+mb = int(mobile)
+print(mb, type(mb))
 
+price = int(input("Total Price:"))
 
-m = 40
-print("value: ", m)
+print(price)
+complex_number = complex(input("Enter Complex Number:"))
+print(complex_number)
 
-name = "배정만"
-age = 42
-print("My name is", name, "and My age is", age, sep=' ')
-
-print("Welcome", end='\t')
-print("to", end='\t')
-print("LikeLion")
+print("He said, \"Hello World\"")
+print('He said, "Hello World"')
+print('It\'s beautiful day')
+print("It's beautiful day")
