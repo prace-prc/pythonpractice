@@ -188,16 +188,36 @@
 # data = [10, 20, -50, 21.3, 'LikeLion']
 #
 # print(data)
+#
+# print("Like", "Share", "Subscribe", sep='')
+# print("Like", "Share", "Subscribe", sep='***')
+#
+# print("Like", "Share", "Subscribe", sep='***', end='\t')
+# print("Like", "Share", "Subscribe", sep='***', end='\n')
+#
+# m = 40
+# print("value: ", m)
+#
+# name = "황주원"
+# age = 27
+# print("My name is", name, "and My age is", age)
+#
+# name = input()
+#
+# print(name)
+#
+# name = input("Your Name : ")
+# mobile = input("Enter Your Mobile Number : ")
+# mb = int(mobile)
+# print(mb, type(mb))
+#
+# price = int(input("Total price : "))
+#
+# print(price)
+# complex_number = complex(input("Enter Complex Number:"))
+# print(complex_number)
 
-print("Like", "Share", "Subscribe", sep='')
-print("Like", "Share", "Subscribe", sep='***')
-
-print("Like", "Share", "Subscribe", sep='***', end='\t')
-print("Like", "Share", "Subscribe", sep='***', end='\n')
-
-m = 40
-print("value: ", m)
-
-name = "황주원"
-age = 27
-print("My name is", name, "and My age is", age)
+print("He said, \"Hello World\"")
+print('He said, "Hello World"')
+print('It\'s beautiful day')
+print("It's beautiful day")
