@@ -1,16 +1,10 @@
-# 할당 연산자 =
+# 비트 연산자 실습
+
 a = 10
-b = 20
-m = 15
+b = 15
 
-y = a + b
-print(y)
-
-m += 10 # m = m + 10
-print(m)
-
-m **= 2
-print(m)
-
-m //= 10
-print(m)
+print('a: ', bin(a))
+print('b: ', bin(b))
+print('a & b: ', a & b)
+print('a << 2: ', a << 2)
+print('a >> 2: ', a >> 2)
