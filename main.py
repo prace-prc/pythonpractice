@@ -343,38 +343,82 @@
 # print(split_str)
 # print(' '.join(split_str))
 # print(s.startswith('Hello'))
+#
+# # 함수
+#
+# print("인자가 없는 함수 정의")
+#
+#
+# def disp():
+#     name = "황주원"
+#     print("Welcome", name)
+#
+#
+# print("함수 실행")
+# disp()
+# disp()
+# disp()
+#
+# print("매개변수가 있는 함수")
+#
+#
+# def add(y):
+#     x = 10
+#     c = x + y
+#     print(c)
+#
+#
+# add(20)
+#
+#
+# def add(y):
+#     x = 10.2334
+#     print(x + y)
+#     print(f"Formatted Output {x + y:6.2f}")
+#
+#
+# add(20)
 
-# 함수
-
-print("인자가 없는 함수 정의")
-
-
-def disp():
-    name = "황주원"
-    print("Welcome", name)
+# 값을 반환하는 함수
+def add():
+    x = 10
+    y = 20
+    c = x + y
+    return c
 
 
-print("함수 실행")
-disp()
-disp()
-disp()
+sum1 = add()
+print(sum1)
 
-print("매개변수가 있는 함수")
+
+def add2():
+    x = 10
+    y = 20
+    return x + y
+
+
+sum2 = add2()
+print(sum2)
+
+
+def add(y):
+    x = 10
+    return x + y
+
+
+sum3 = add(20)
+print(sum3)
 
 
 def add(y):
     x = 10
     c = x + y
-    print(c)
+    d = y - x
+    return c, d, 50
 
 
-add(20)
-
-
-def add(y):
-    x = 10.2334
-    print(x + y)
-    print(f"Formatted Output {x + y:6.2f}")
-
-
-add(20)
+sum4, sub1, a = add(20)
+print(sum4)
+print(sub1)
+print(a)
+print(type(add(20)))
