@@ -320,9 +320,9 @@
 # print(str7)
 # print(str8)
 # print(str9)
-
-# 문자열 함수
-s = 'Hello,World'
+#
+# # 문자열 함수
+# s = 'Hello,World'
 #
 # print(s.upper())
 # print(s.lower())
@@ -337,9 +337,44 @@ s = 'Hello,World'
 # print(s.lstrip())
 # print(s.rstrip())
 # print(s.strip())
+#
+# print(s.replace('World', 'there'))
+# split_str = s.split(',')
+# print(split_str)
+# print(' '.join(split_str))
+# print(s.startswith('Hello'))
 
-print(s.replace('World', 'there'))
-split_str = s.split(',')
-print(split_str)
-print(' '.join(split_str))
-print(s.startswith('Hello'))
+# 함수
+
+print("인자가 없는 함수 정의")
+
+
+def disp():
+    name = "황주원"
+    print("Welcome", name)
+
+
+print("함수 실행")
+disp()
+disp()
+disp()
+
+print("매개변수가 있는 함수")
+
+
+def add(y):
+    x = 10
+    c = x + y
+    print(c)
+
+
+add(20)
+
+
+def add(y):
+    x = 10.2334
+    print(x + y)
+    print(f"Formatted Output {x + y:6.2f}")
+
+
+add(20)
