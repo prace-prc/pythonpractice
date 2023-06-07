@@ -322,18 +322,24 @@
 # print(str9)
 
 # 문자열 함수
-s = ' Hello World '
+s = 'Hello,World'
+#
+# print(s.upper())
+# print(s.lower())
+# print(s.swapcase())
+# print(s.title())
+# print(s.isupper())
+# print(s.islower())
+# print(s.istitle())
+# print(s.isdigit())
+# print(s.isalpha())
+#
+# print(s.lstrip())
+# print(s.rstrip())
+# print(s.strip())
 
-print(s.upper())
-print(s.lower())
-print(s.swapcase())
-print(s.title())
-print(s.isupper())
-print(s.islower())
-print(s.istitle())
-print(s.isdigit())
-print(s.isalpha())
-
-print(s.lstrip())
-print(s.rstrip())
-print(s.strip())
+print(s.replace('World', 'there'))
+split_str = s.split(',')
+print(split_str)
+print(' '.join(split_str))
+print(s.startswith('Hello'))
