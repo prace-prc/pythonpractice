@@ -1,4 +1,4 @@
-첫번째 while 루프
+# 첫번째 while 루프
 a = 1
 while a <= 10:
     print(a)
@@ -19,10 +19,10 @@ else:
     print("While 조건이 거짓이므로 Else 부분 실행됨")
 print("코드 종료")
 
-무한 루프
-while True:
-    print("멋쟁이 사자")
-print("코드 종료")
+# 무한 루프
+# while True:
+#     print("멋쟁이 사자")
+# print("코드 종료")
 
 i = 0
 while True:
@@ -32,7 +32,7 @@ while True:
         break
 print("코드 종료")
 
-중첩
+# 중첩
 i = 1
 while i <= 3:
     print("Outer Loop", i)
