@@ -229,58 +229,78 @@
 #
 # for letter in runner:
 #     print(letter)
+#
+# # 튜플
+#
+# b = (10)
+# c = (10,)
+#
+# print(b)
+# print(c)
+#
+# d = (10, 20, 30, 40)
+# e = (10, 20, -50, 21.3, '안녕하세요')
+# f = 10, 20, -50, 21.3, '안녕하세요'
+#
+# print(d, e, f, sep='\n')
+#
+# print(f[1])
+# print(f[2])
+# print(f[3])
+# print(f[4])
+#
+# print(f[:3])
+# print(f[-2:])
+#
+# print(f[1:4])
+# print(f[3:])
+# print(c + f)
+# print(f * 5)
+# print(10 in f)
+# print("========")
+# h = (10, 20, -50, 20)
+# print(min(h), max(h))
+# print(h.count(20))
+# print(h.index(20))
+# sorted_a = sorted(h)
+# print(sorted_a)
+# # 튜플 언패킹
+# a = (10, 20, -50)
+# x, y, z = a
+# print(x, y, z)
+#
+# a = 1
+# b = 2
+#
+# temp = a
+# a = b
+# b = temp
+# print(a, b)
+#
+# a, b = b, a
+# print(a, b)
+#
+# print(list(h), type(list(h)))
+# print(tuple(list(h)), type(tuple(list(h))))
+#
+# nested_tuple = ((1, 2, 3), (4, 5, 6), (7, 8, 9))
 
-# 튜플
+# 셋 실습
+a = {10, 20, 30}
+a = {10, 20, 30, "멋쟁이사자", "Hi", 40}
+a = {10, 20, 30, "멋쟁이사자", "Hi", 40, 10, 20}
 
-b = (10)
-c = (10,)
+b = set()
+print(type(b))
+a.add(50)
+a.update([10, 20, 60, 70])
+print(a)
+a.remove("멋쟁이사자")
+a.discard("멋쟁이사자")
+a.discard(70)
+print(a)
 
-print(b)
-print(c)
-
-d = (10, 20, 30, 40)
-e = (10, 20, -50, 21.3, '안녕하세요')
-f = 10, 20, -50, 21.3, '안녕하세요'
-
-print(d, e, f, sep='\n')
-
-print(f[1])
-print(f[2])
-print(f[3])
-print(f[4])
-
-print(f[:3])
-print(f[-2:])
-
-print(f[1:4])
-print(f[3:])
-print(c + f)
-print(f * 5)
-print(10 in f)
-print("========")
-h = (10, 20, -50, 20)
-print(min(h), max(h))
-print(h.count(20))
-print(h.index(20))
-sorted_a = sorted(h)
-print(sorted_a)
-# 튜플 언패킹
-a = (10, 20, -50)
-x, y, z = a
-print(x, y, z)
-
-a = 1
-b = 2
-
-temp = a
-a = b
-b = temp
-print(a, b)
-
-a, b = b, a
-print(a, b)
-
-print(list(h), type(list(h)))
-print(tuple(list(h)), type(tuple(list(h))))
-
-nested_tuple = ((1, 2, 3), (4, 5, 6), (7, 8, 9))
+# 셋 초기화
+new_set = a.copy()
+new_set.clear()
+print(new_set)
