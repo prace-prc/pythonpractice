@@ -57,43 +57,73 @@
 #
 #
 # add(a=5, b=2, c=4, d=5)
+#
+# # 지역변수와 전역변수
+#
+# def show():
+#     x = 10
+#     print(x)
+#
+#
+# show()
+#
+#
+# def add(y):
+#     x = 10
+#     print(x + y)
+#
+#
+# add(20)
+#
+# a = 50
+#
+#
+# def show():
+#     x = 10
+#     print(x)  # 지역 변수
+#     print(a)  # 전역 변수
+#
+#
+# show()
+#
+# print("Global Variable a: ", a)
+# i = 0
+#
+#
+# def myfun():
+#     a = i + 1
+#     print("My Function", a)
+#
+#
+# myfun()
+# print("Global Variable a: ", a)
 
-# 지역변수와 전역변수
+i = 1
 
-def show():
-    x = 10
-    print(x)
+i += 1
 
+def myfun():
+    b = i + 1
+    print("My function i:", i)
 
-show()
+myfun()
 
-
-def add(y):
-    x = 10
-    print(x + y)
-
-
-add(20)
+# Global 키워드
 
 a = 50
 
-
 def show():
-    x = 10
-    print(x)  # 지역 변수
-    print(a)  # 전역 변수
-
+    a = 10
+    print("show-A: ", a)
 
 show()
+print("A:", a)
 
-print("Global Variable a: ", a)
-i = 0
+def show2():
+    global a
+    print("show2-A: ", a)
+    a= 20
+    print("show2-A2: ", a)
 
-
-def myfun():
-    a = i + 1
-    print("My Function", a)
-
-
-myfun()
-print("Global Variable a: ", a)
+show2()
+print("A: ", a)
