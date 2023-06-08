@@ -400,20 +400,30 @@
 # print("Before Calling:", x, id(x))
 # val(x)
 # print("After Calling: ", x, id(x))
+#
+# # 재귀함수
+#
+# import sys
+# print("default:", sys.getrecursionlimit())
+# sys.setrecursionlimit(3000)
+# print("setting:", sys.getrecursionlimit())
+#
+# i = 0
+#
+# def myfun():
+#     global i
+#     i += 1
+#     print("My Function:", i)
+#     myfun()
+#
+# myfun()
 
-# 재귀함수
+show = lambda x: print(x)
+show(5)
+add = lambda x, y: (x + y)
+print(add(5, 2))
+add_sub = lambda x, y: (x + y, x - y)
+a, s = add_sub(5, 2)
 
-import sys
-print("default:", sys.getrecursionlimit())
-sys.setrecursionlimit(3000)
-print("setting:", sys.getrecursionlimit())
-
-i = 0
-
-def myfun():
-    global i
-    i += 1
-    print("My Function:", i)
-    myfun()
-
-myfun()
+print(a)
+print(s)
