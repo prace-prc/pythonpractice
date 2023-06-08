@@ -157,40 +157,61 @@
 # fruits.reverse()
 #
 # print(fruits)
+#
+# # 리스트 연결
+#
+# fruits = ["apple", "banana", "cherry", "orange"]
+# vegetables = ["carrot", "cucumber"]
+#
+# grocery = fruits + vegetables
+# print(grocery)
+#
+# # 리스트 정렬
+#
+# numbers = [10, 5, 8, 1, 7]
+# numbers.sort()
+# print(numbers)
+#
+# slice_numbers = numbers[1:4]
+#
+# print(slice_numbers)
+#
+# numbers_copy = numbers.copy()
+# print(numbers_copy)
+#
+# numbers_clone = numbers[:]
+# print(numbers_clone)
+#
+# # 사용자 입력으로 리스트 만들기
+#
+# user_input_list = []
+# num_elements = int(input("Enter Number of Element: "))
+# for i in range(num_elements):
+#     user_input_list.append(input("Enter Element:"))
+#
+# print("User Input List:")
+# for element in user_input_list:
+#     print(element)
+#
+# print(user_input_list)
 
-# 리스트 연결
+# 제네레이터 실습
 
-fruits = ["apple", "banana", "cherry", "orange"]
-vegetables = ["carrot", "cucumber"]
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
 
-grocery = fruits + vegetables
-print(grocery)
 
-# 리스트 정렬
+runner = fibonacci(10)
 
-numbers = [10, 5, 8, 1, 7]
-numbers.sort()
-print(numbers)
+print(next(runner))
 
-slice_numbers = numbers[1:4]
+print("======")
+print(runner)
+print(next(runner))
+print("======")
 
-print(slice_numbers)
-
-numbers_copy = numbers.copy()
-print(numbers_copy)
-
-numbers_clone = numbers[:]
-print(numbers_clone)
-
-# 사용자 입력으로 리스트 만들기
-
-user_input_list = []
-num_elements = int(input("Enter Number of Element: "))
-for i in range(num_elements):
-    user_input_list.append(input("Enter Element:"))
-
-print("User Input List:")
-for element in user_input_list:
-    print(element)
-
-print(user_input_list)
+for num in runner:
+    print(num)
