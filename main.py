@@ -127,35 +127,70 @@
 #
 # show2()
 # print("A: ", a)
+#
+# # 리스트 실습
+#
+# fruits = ["apple", "banana", "cherry", "orange"]
+#
+# print(fruits)
+#
+# fruits.append("grape")
+#
+# print(fruits)
+#
+# fruits.insert(2, "kiwi")
+#
+# print(fruits)
+#
+# print(fruits.pop())
+# print(fruits.pop(1))
+#
+# fruits.append("cherry")
+# print(fruits)
+#
+# print(fruits.index("cherry"))
+# print(fruits.remove("cherry"))
+# print(fruits.index("cherry"))
+# print(fruits.remove("cherry"))
+# # print(fruits.index("cherry"))
+#
+# fruits.reverse()
+#
+# print(fruits)
 
-# 리스트 실습
+# 리스트 연결
 
 fruits = ["apple", "banana", "cherry", "orange"]
+vegetables = ["carrot", "cucumber"]
 
-print(fruits)
+grocery = fruits + vegetables
+print(grocery)
 
-fruits.append("grape")
+# 리스트 정렬
 
-print(fruits)
+numbers = [10, 5, 8, 1, 7]
+numbers.sort()
+print(numbers)
 
-fruits.insert(2, "kiwi")
+slice_numbers = numbers[1:4]
 
-print(fruits)
+print(slice_numbers)
 
-print(fruits.pop())
-print(fruits.pop(1))
+numbers_copy = numbers.copy()
+print(numbers_copy)
 
-fruits.append("cherry")
-print(fruits)
+numbers_clone = numbers[:]
+print(numbers_clone)
 
-print(fruits.index("cherry"))
-print(fruits.remove("cherry"))
-print(fruits.index("cherry"))
-print(fruits.remove("cherry"))
-# print(fruits.index("cherry"))
+# 사용자 입력으로 리스트 만들기
 
-fruits.reverse()
+user_input_list = []
+num_elements = int(input("Enter Number of Element: "))
+for i in range(num_elements):
+    user_input_list.append(input("Enter Element:"))
 
-print(fruits)
+print("User Input List:")
+for element in user_input_list:
+    print(element)
 
-
+print(user_input_list)
