@@ -417,13 +417,59 @@
 #     myfun()
 #
 # myfun()
+#
+# show = lambda x: print(x)
+# show(5)
+# add = lambda x, y: (x + y)
+# print(add(5, 2))
+# add_sub = lambda x, y: (x + y, x - y)
+# a, s = add_sub(5, 2)
+#
+# print(a)
+# print(s)
 
-show = lambda x: print(x)
-show(5)
-add = lambda x, y: (x + y)
-print(add(5, 2))
-add_sub = lambda x, y: (x + y, x - y)
-a, s = add_sub(5, 2)
+def decor(fun):
+    def inner():
+        a = fun()
+        add = a + 5
+        return add
+    return inner
 
-print(a)
-print(s)
+
+def num():
+    return 10
+
+
+result_fun = decor(num)
+print(result_fun())
+
+def decor(fun):
+    def inner():
+        a = fun()
+        add = a + 5
+        return add
+    return inner
+
+@decor
+def num():
+    return 10
+
+
+print(num())
+
+from array import *
+
+
+def show(ar):
+    print("Passed Array ar:", ar)
+    print(type(ar))
+    for i in ar:
+        print(i)
+    return ar
+
+
+print('=====')
+a = array('i', [101, 102, 103, 104])
+y = show(a)
+print("Return Array Y:", y)
+print(type(y))
