@@ -323,57 +323,68 @@
 #
 # sym_a = a.symmetric_difference(new_set)
 # print('symmetric_difference:', sym_a)
+#
+# # 딕셔너리
+#
+# stu = {101: 'Kim', 102: 'Bae', 103: 'Hong'}
+# fees = {'kim': 2000, 'bae': 3000, 'hong': 8000}
+# print(stu[101])
+# print(stu[102])
+# print(stu[103])
+#
+# print(fees['kim'])
+# print(fees['bae'])
+# print(fees['hong'])
+#
+# stu[102] = 'Python'
+#
+# print(stu)
+#
+# stu[104] = '멋사'
+#
+# print(stu)
+#
+# del stu[102]
+#
+# print(stu)
+#
+# print(102 not in stu)
+#
+# # stu.clear()
+#
+# print(stu)
+#
+# new_stu = stu.copy()
+#
+# key = (101, 102, 103)
+# value = '멋사'
+# new_stu = dict.fromkeys(key, value)
+#
+# print(new_stu)
+#
+# print(stu[101])
+# print(stu.get(101))
+# print(stu.items())
+# print(stu.keys())
+# print(stu.values())
+# stu[104] = '멋사'
+# stu.update({104: '멋쟁이사자2'})
+# print(stu)
+# print(stu.pop(104))
+# print(stu)
+# print(stu.pop(104, 'No Value'))
+# stu.setdefault(104, 'Park')
+# print(stu)
+#
+# print(stu.popitem())
 
-# 딕셔너리
+def val(lst):
+    print("Inside Function Before Append:", lst, id(lst))
+    lst.append(4)
+    print("Inside Function Before Append:", lst, id(lst))
 
-stu = {101: 'Kim', 102: 'Bae', 103: 'Hong'}
-fees = {'kim': 2000, 'bae': 3000, 'hong': 8000}
-print(stu[101])
-print(stu[102])
-print(stu[103])
 
-print(fees['kim'])
-print(fees['bae'])
-print(fees['hong'])
-
-stu[102] = 'Python'
-
-print(stu)
-
-stu[104] = '멋사'
-
-print(stu)
-
-del stu[102]
-
-print(stu)
-
-print(102 not in stu)
-
-# stu.clear()
-
-print(stu)
-
-new_stu = stu.copy()
-
-key = (101, 102, 103)
-value = '멋사'
-new_stu = dict.fromkeys(key, value)
-
-print(new_stu)
-
-print(stu[101])
-print(stu.get(101))
-print(stu.items())
-print(stu.keys())
-print(stu.values())
-stu[104] = '멋사'
-stu.update({104: '멋쟁이사자2'})
-print(stu)
-print(stu.pop(104))
-print(stu)
-print(stu.pop(104, 'No Value'))
-stu.setdefault(104, 'Park')
-print(stu)
-
-print(stu.popitem())
+lst = [1, 2, 3]
+print("Before Calling Function: ", lst, id(lst))
+val(lst)
+print("Before Calling Function: ", lst, id(lst))
