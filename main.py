@@ -118,22 +118,40 @@
 # child.add_num(7)
 # print(parent)
 # print(child)
+#
+# from datetime import timedelta, datetime
+# from datetime import date
+#
+# td = timedelta(days=10)
+# print(td)
+#
+# d1 = date(year=2023, month=5, day=5)
+# d2 = date(year=2023, month=6, day=9)
+#
+# # 날짜의 연산자 오버로딩으로 비교 가능
+# print(d1 == d2)
+# print(d1 < d2)
+# print(d1 > d2)
+#
+# dt = datetime.today()
+#
+# formatted_datetime = dt. strftime('%B, %d, %Y')
+# print(formatted_datetime)
 
-from datetime import timedelta, datetime
-from datetime import date
+# 파일 읽기
+file_object = open('example.txt', 'r')
 
-td = timedelta(days=10)
-print(td)
+content = file_object.read()
 
-d1 = date(year=2023, month=5, day=5)
-d2 = date(year=2023, month=6, day=9)
+print(content)
 
-# 날짜의 연산자 오버로딩으로 비교 가능
-print(d1 == d2)
-print(d1 < d2)
-print(d1 > d2)
+file_object.close()
 
-dt = datetime.today()
+# 파일 쓰기
+file_object = open('new_example.txt', 'w')
 
-formatted_datetime = dt. strftime('%B, %d, %Y')
-print(formatted_datetime)
+content = "This is a new file.\nPython is fun!"
+
+file_object.write(content)
+
+file_object.close()
