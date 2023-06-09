@@ -57,26 +57,64 @@
 # n = Multi()
 # m.result(10, 20)
 # n.result(10, 20)
+#
+# # 날짜와 시간
+# import time
+#
+# print(time.time())
+# print(time.ctime())
+#
+# from datetime import datetime, date
+#
+# dt = datetime(year=2023, month=5, day=5, hour=10, minute=30)
+# print(dt)
+# print(type(dt))
+#
+# current_time = time.ctime()
+# current_datetime = datetime.now()
+#
+# print(current_datetime, current_time)
+#
+# d = date(year=2023, month=6, day=25)
+# print(d)
+#
+# current_date = date.today()
+# print(current_date)
 
-# 날짜와 시간
-import time
+class ParentClass:
+    def __init__(self):
+        self.name = 'parent'
+        self.number = 10
 
-print(time.time())
-print(time.ctime())
+    def __str__(self):
+        return f'ParentClass Name : {self.name}, number : {self.number}'
 
-from datetime import datetime, date
+    def add_num(self, new_number):
+        print('부모 : ', new_number, '만큼 더해야지')
+        self.number = self.number + new_number
 
-dt = datetime(year=2023, month=5, day=5, hour=10, minute=30)
-print(dt)
-print(type(dt))
 
-current_time = time.ctime()
-current_datetime = datetime.now()
+class ChildClass(ParentClass):
+    def __init__(self):
+        super().__init__()
+        self.name = 'child'
 
-print(current_datetime, current_time)
+    def __str__(self):
+        return f'ChildClass Name : {self.name}, number : {self.number}'
 
-d = date(year=2023, month=6, day=25)
-print(d)
+    def add_num(self, new_number):
+        print('자식 : ', '고정적으로 5 더할거야')
+        self.number = self.number + 5
 
-current_date = date.today()
-print(current_date)
+
+parent = ParentClass()
+child = ChildClass()
+print(parent)
+print(child)
+print('--------')
+
+print('7을 더하세요')
+parent.add_num(7)
+child.add_num(7)
+print(parent)
+print(child)
