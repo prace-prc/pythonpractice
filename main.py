@@ -80,41 +80,60 @@
 #
 # current_date = date.today()
 # print(current_date)
+#
+# class ParentClass:
+#     def __init__(self):
+#         self.name = 'parent'
+#         self.number = 10
+#
+#     def __str__(self):
+#         return f'ParentClass Name : {self.name}, number : {self.number}'
+#
+#     def add_num(self, new_number):
+#         print('부모 : ', new_number, '만큼 더해야지')
+#         self.number = self.number + new_number
+#
+#
+# class ChildClass(ParentClass):
+#     def __init__(self):
+#         super().__init__()
+#         self.name = 'child'
+#
+#     def __str__(self):
+#         return f'ChildClass Name : {self.name}, number : {self.number}'
+#
+#     def add_num(self, new_number):
+#         print('자식 : ', '고정적으로 5 더할거야')
+#         self.number = self.number + 5
+#
+#
+# parent = ParentClass()
+# child = ChildClass()
+# print(parent)
+# print(child)
+# print('--------')
+#
+# print('7을 더하세요')
+# parent.add_num(7)
+# child.add_num(7)
+# print(parent)
+# print(child)
 
-class ParentClass:
-    def __init__(self):
-        self.name = 'parent'
-        self.number = 10
+from datetime import timedelta, datetime
+from datetime import date
 
-    def __str__(self):
-        return f'ParentClass Name : {self.name}, number : {self.number}'
+td = timedelta(days=10)
+print(td)
 
-    def add_num(self, new_number):
-        print('부모 : ', new_number, '만큼 더해야지')
-        self.number = self.number + new_number
+d1 = date(year=2023, month=5, day=5)
+d2 = date(year=2023, month=6, day=9)
 
+# 날짜의 연산자 오버로딩으로 비교 가능
+print(d1 == d2)
+print(d1 < d2)
+print(d1 > d2)
 
-class ChildClass(ParentClass):
-    def __init__(self):
-        super().__init__()
-        self.name = 'child'
+dt = datetime.today()
 
-    def __str__(self):
-        return f'ChildClass Name : {self.name}, number : {self.number}'
-
-    def add_num(self, new_number):
-        print('자식 : ', '고정적으로 5 더할거야')
-        self.number = self.number + 5
-
-
-parent = ParentClass()
-child = ChildClass()
-print(parent)
-print(child)
-print('--------')
-
-print('7을 더하세요')
-parent.add_num(7)
-child.add_num(7)
-print(parent)
-print(child)
+formatted_datetime = dt. strftime('%B, %d, %Y')
+print(formatted_datetime)
