@@ -137,43 +137,61 @@
 #
 # formatted_datetime = dt. strftime('%B, %d, %Y')
 # print(formatted_datetime)
+#
+# # 파일 읽기
+# file_object = open('example.txt', 'r')
+#
+# content = file_object.read()
+#
+# print(content)
+#
+# file_object.close()
+#
+# # 파일 쓰기
+# file_object = open('new_example.txt', 'w')
+#
+# content = "This is a new file.\nPython is fun!"
+#
+# file_object.write(content)
+#
+# file_object.close()
+#
+# # 파일 관리
+# print("파일 열기")
+# file_object = open('example.txt', 'r')
+#
+# print("현재 파일 위치 확인")
+# position = file_object.tell()
+# print("Current Position:", position)
+#
+# print("파일 포인터 위치 이동")
+# file_object.seek(5)
+# position = file_object.tell()
+# print("New position:", position)
+# file_object.close()
+#
+# # with문 사용(close 사용하지 않아도 됨)
+# with open('example.txt', 'r') as file_object:
+#     lines = file_object.readlines()
+#     for line in lines:
+#         print('>', line.strip())
 
-# 파일 읽기
-file_object = open('example.txt', 'r')
+import os
 
-content = file_object.read()
+filename = 'example.txt'
 
-print(content)
+print("파일이 존재하는지 확인하기")
+if os.path.isfile(filename):
+    print(f"{filename}이 존재합니다.")
+else:
+    print(f"{filename}이 없습니다.")
+
+file_object = open('list_example.txt', 'w')
+
+content_list = ["Python", "Java", "C++", "Javascript"]
+
+for item in content_list:
+    print(file_object.tell())
+    file_object.write(item + '\n')
 
 file_object.close()
-
-# 파일 쓰기
-file_object = open('new_example.txt', 'w')
-
-content = "This is a new file.\nPython is fun!"
-
-file_object.write(content)
-
-file_object.close()
-
-# 파일 관리
-print("파일 열기")
-file_object = open('example.txt', 'r')
-
-print("현재 파일 위치 확인")
-position = file_object.tell()
-print("Current Position:", position)
-
-print("파일 포인터 위치 이동")
-file_object.seek(5)
-position = file_object.tell()
-print("New position:", position)
-file_object.close()
-
-# with문 사용(close 사용하지 않아도 됨)
-with open('example.txt', 'r') as file_object:
-    lines = file_object.readlines()
-    for line in lines:
-        print('>', line.strip())
-
-
