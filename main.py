@@ -1,25 +1,18 @@
-class Car:
-    # 클래스 속성
-    wheels = 4
-
-    def __init__(self, make, model, color):
+class Vehicle:
+    def __init__(self, make, model, year):
         self.make = make
         self.model = model
-        self.color = color
+        self.year = year
 
-    # Method
-    def drive(self):
-        return "The car is moving!"
-
-    def stop(self):
-        return f"The car has stopped."
+    def start_engine(self):
+        return "The engine is running!"
 
 
-my_car = Car("Kia", "Morning", "Blue")
+class Car(Vehicle):
+    def start_engine(self):
+        return super().start_engine() + " It's a car engine."
 
-# 속성 사용
-print(my_car.make)
 
-# 메소드 호출
-print(my_car.drive())
-print(my_car.stop())
+my_car = Car("Toyota", "Corolla", 2020)
+
+print(my_car.start_engine())
