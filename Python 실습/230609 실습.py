@@ -1,475 +1,228 @@
-# def pw(x, y):
-#     z = x ** y
-#     print(z)
-#
-#
-# pw(2, 5)
-# pw(y=5, x=2)
-#
-#
-# # pw(5, 2, 3) 매개변수를 2개까지 받을 수 있는데 3개를 줘서 오류가 발생
-#
-# def show(name, age=30):
-#     print(f"Name: {name} Age: {age}")
-#
-#
-# # 키워드 인자는 순서가 바뀌어도 실행 결과가 같음
-# show(name="황주원", age=27)
-# show(age=27, name="황주원")
-#
-#
-# # 기본 인수를 사용하면 값이 주어지지 않았을 때 기본으로 사용하는 값이 설정됨
-# def show(name, age=27):
-#     print(f"Name: {name} Age: {age}")
-#
-#
-# show(name="황주원")
-#
-# # 가변 인자 길이 실습
-# def add(x, y):
-#     z = x + y
-#     print("Addition: ", z)
-#
-#
-# add(5, 2)
-#
-#
-# def add(*num):
-#     z = num[0] + num[1] + num[2]
-#     print("Addition *: ", z)
-#
-#
-# add(5, 2, 4)
-#
-#
-# def add(x, *num):
-#     z = x + num[0] + num[1]
-#     print("Addition x  *: ", z)
-#
-#
-# add(5, 2, 4)
-#
-#
-# # 가변 키워드 인자
-# def add(**num):
-#     z = num['a'] + num['b'] + num['c']
-#     print('Addition: ', z)
-#
-#
-# add(a=5, b=2, c=4, d=5)
-#
-# # 지역변수와 전역변수
-#
-# def show():
-#     x = 10
-#     print(x)
-#
-#
-# show()
-#
-#
-# def add(y):
-#     x = 10
-#     print(x + y)
-#
-#
-# add(20)
-#
-# a = 50
-#
-#
-# def show():
-#     x = 10
-#     print(x)  # 지역 변수
-#     print(a)  # 전역 변수
-#
-#
-# show()
-#
-# print("Global Variable a: ", a)
-# i = 0
-#
-#
-# def myfun():
-#     a = i + 1
-#     print("My Function", a)
-#
-#
-# myfun()
-# print("Global Variable a: ", a)
-#
-# i = 1
-#
-# i += 1
-#
-# def myfun():
-#     b = i + 1
-#     print("My function i:", i)
-#
-# myfun()
-#
-# # Global 키워드
-#
-# a = 50
-#
-# def show():
-#     a = 10
-#     print("show-A: ", a)
-#
-# show()
-# print("A:", a)
-#
-# def show2():
-#     global a
-#     print("show2-A: ", a)
-#     a= 20
-#     print("show2-A2: ", a)
-#
-# show2()
-# print("A: ", a)
-#
-# # 리스트 실습
-#
-# fruits = ["apple", "banana", "cherry", "orange"]
-#
-# print(fruits)
-#
-# fruits.append("grape")
-#
-# print(fruits)
-#
-# fruits.insert(2, "kiwi")
-#
-# print(fruits)
-#
-# print(fruits.pop())
-# print(fruits.pop(1))
-#
-# fruits.append("cherry")
-# print(fruits)
-#
-# print(fruits.index("cherry"))
-# print(fruits.remove("cherry"))
-# print(fruits.index("cherry"))
-# print(fruits.remove("cherry"))
-# # print(fruits.index("cherry"))
-#
-# fruits.reverse()
-#
-# print(fruits)
-#
-# # 리스트 연결
-#
-# fruits = ["apple", "banana", "cherry", "orange"]
-# vegetables = ["carrot", "cucumber"]
-#
-# grocery = fruits + vegetables
-# print(grocery)
-#
-# # 리스트 정렬
-#
-# numbers = [10, 5, 8, 1, 7]
-# numbers.sort()
-# print(numbers)
-#
-# slice_numbers = numbers[1:4]
-#
-# print(slice_numbers)
-#
-# numbers_copy = numbers.copy()
-# print(numbers_copy)
-#
-# numbers_clone = numbers[:]
-# print(numbers_clone)
-#
-# # 사용자 입력으로 리스트 만들기
-#
-# user_input_list = []
-# num_elements = int(input("Enter Number of Element: "))
-# for i in range(num_elements):
-#     user_input_list.append(input("Enter Element:"))
-#
-# print("User Input List:")
-# for element in user_input_list:
-#     print(element)
-#
-# print(user_input_list)
-#
-# # 제네레이터 실습
-#
-# def fibonacci(n):
-#     a, b = 0, 1
-#     for _ in range(n):
-#         yield a
-#         a, b = b, a + b
-#
-#
-# runner = fibonacci(10)
-#
-# print(next(runner))
-#
-# print("======")
-# print(runner)
-# print(next(runner))
-# print("======")
-#
-# for num in runner:
-#     print(num)
-#
-# # 알파넷 제네레이터
-#
-# def generate_alphabet(start_letter, end_letter):
-#     start = ord(start_letter)
-#     end = ord(end_letter)
-#     while start <= end:
-#         yield chr(start)
-#         start += 1
-#
-# runner = generate_alphabet("A", "F")
-#
-# for letter in runner:
-#     print(letter)
-#
-# # 튜플
-#
-# b = (10)
-# c = (10,)
-#
+# class Mobile:
+#     fp = 'yes'
+#
+#
+# realme = Mobile()
+# redme = Mobile()
+# geek = Mobile()
+#
+# print(Mobile.fp)
+# print(realme.fp)
+# print(redme.fp)
+# print(geek.fp)
+#
+# Mobile.fp = 'no'
+# print(Mobile.fp)
+# print(realme.fp)
+# print(redme.fp)
+# print(geek.fp)
+# print("----------")
+# realme.fp = 'Not Working'
+# print(Mobile.fp)
+# print(realme.fp)
+# print(redme.fp)
+# print(geek.fp)
+#
+# class Vector:
+#     def __init__(self, x, y):  # 나 자신을 재정의
+#         self.x = x
+#         self.y = y
+#
+#     def __add__(self, other):  # 덧셈 동작을 재정의
+#         return Vector(self.x + other.x, self.y + other.y)
+#
+#     def __str__(self):  # string으로 반환되는 값 재정의, 정의하지 않아도 다른 방식으로 동작(오버라이딩)
+#         return f'Vector({self.x}, {self.y})'
+#
+#
+# a = Vector(1, 2)
+# b = Vector(3, 4)
+# print(a)
 # print(b)
+# c = a + b
 # print(c)
 #
-# d = (10, 20, 30, 40)
-# e = (10, 20, -50, 21.3, '안녕하세요')
-# f = 10, 20, -50, 21.3, '안녕하세요'
 #
-# print(d, e, f, sep='\n')
-#
-# print(f[1])
-# print(f[2])
-# print(f[3])
-# print(f[4])
-#
-# print(f[:3])
-# print(f[-2:])
-#
-# print(f[1:4])
-# print(f[3:])
-# print(c + f)
-# print(f * 5)
-# print(10 in f)
-# print("========")
-# h = (10, 20, -50, 20)
-# print(min(h), max(h))
-# print(h.count(20))
-# print(h.index(20))
-# sorted_a = sorted(h)
-# print(sorted_a)
-# # 튜플 언패킹
-# a = (10, 20, -50)
-# x, y, z = a
-# print(x, y, z)
-#
-# a = 1
-# b = 2
-#
-# temp = a
-# a = b
-# b = temp
-# print(a, b)
-#
-# a, b = b, a
-# print(a, b)
-#
-# print(list(h), type(list(h)))
-# print(tuple(list(h)), type(tuple(list(h))))
-#
-# nested_tuple = ((1, 2, 3), (4, 5, 6), (7, 8, 9))
-#
-# # 셋 실습
-# a = {10, 20, 30}
-# a = {10, 20, 30, "멋쟁이사자", "Hi", 40}
-# a = {10, 20, 30, "멋쟁이사자", "Hi", 40, 10, 20}
-#
-# new_set = a.copy()
-#
-# b = set()
-# print(type(b))
-# a.add(50)
-# a.update([10, 20, 60, 70])
-# print(a)
-# a.remove("멋쟁이사자")
-# a.discard("멋쟁이사자")
-# a.discard(70)
-# print(a)
-#
-# # 셋 초기화
-#
-# # new_set.clear()
-# # print(new_set)
-#
-# # 교집합과 합집합, 차집합, 부분집합, 대칭차집합
-# intersection_a_new = a.intersection(new_set)
-#
-# print(intersection_a_new)
-#
-# union_a = a.union(new_set)
-# print('union_a:', union_a)
-#
-# difference_a = a.difference(new_set)
-# print('difference_a', difference_a)
-#
-# print(b.issubset(a))
-# print(a.issuperset(b))
-#
-# sym_a = a.symmetric_difference(new_set)
-# print('symmetric_difference:', sym_a)
-#
-# # 딕셔너리
-#
-# stu = {101: 'Kim', 102: 'Bae', 103: 'Hong'}
-# fees = {'kim': 2000, 'bae': 3000, 'hong': 8000}
-# print(stu[101])
-# print(stu[102])
-# print(stu[103])
-#
-# print(fees['kim'])
-# print(fees['bae'])
-# print(fees['hong'])
-#
-# stu[102] = 'Python'
-#
-# print(stu)
-#
-# stu[104] = '멋사'
-#
-# print(stu)
-#
-# del stu[102]
-#
-# print(stu)
-#
-# print(102 not in stu)
-#
-# # stu.clear()
-#
-# print(stu)
-#
-# new_stu = stu.copy()
-#
-# key = (101, 102, 103)
-# value = '멋사'
-# new_stu = dict.fromkeys(key, value)
-#
-# print(new_stu)
-#
-# print(stu[101])
-# print(stu.get(101))
-# print(stu.items())
-# print(stu.keys())
-# print(stu.values())
-# stu[104] = '멋사'
-# stu.update({104: '멋쟁이사자2'})
-# print(stu)
-# print(stu.pop(104))
-# print(stu)
-# print(stu.pop(104, 'No Value'))
-# stu.setdefault(104, 'Park')
-# print(stu)
-#
-# print(stu.popitem())
-#
-# def val(lst):
-#     print("Inside Function Before Append:", lst, id(lst))
-#     lst.append(4)
-#     print("Inside Function Before Append:", lst, id(lst))
+# class Add:
+#     def result(self, a, b):
+#         print("Addition:", a + b)
 #
 #
-# lst = [1, 2, 3]
-# print("Before Calling Function: ", lst, id(lst))
-# val(lst)
-# print("Before Calling Function: ", lst, id(lst))
+# class Multi(Add):
+#     def result(self, a, b):
+#         print("Multiplication:", a * b)
 #
-# def val(x):
-#     print("Inside :", x, id(x))
-#     x += 1
-#     print("Inside After:", x, id(x))
 #
-# print("======")
+# m = Add()
+# n = Multi()
+# m.result(10, 20)
+# n.result(10, 20)
 #
-# x = 10
-# print("Before Calling:", x, id(x))
-# val(x)
-# print("After Calling: ", x, id(x))
+# # 날짜와 시간
+# import time
 #
-# # 재귀함수
+# print(time.time())
+# print(time.ctime())
 #
-# import sys
-# print("default:", sys.getrecursionlimit())
-# sys.setrecursionlimit(3000)
-# print("setting:", sys.getrecursionlimit())
+# from datetime import datetime, date
 #
-# i = 0
+# dt = datetime(year=2023, month=5, day=5, hour=10, minute=30)
+# print(dt)
+# print(type(dt))
 #
-# def myfun():
-#     global i
-#     i += 1
-#     print("My Function:", i)
-#     myfun()
+# current_time = time.ctime()
+# current_datetime = datetime.now()
 #
-# myfun()
+# print(current_datetime, current_time)
 #
-# show = lambda x: print(x)
-# show(5)
-# add = lambda x, y: (x + y)
-# print(add(5, 2))
-# add_sub = lambda x, y: (x + y, x - y)
-# a, s = add_sub(5, 2)
+# d = date(year=2023, month=6, day=25)
+# print(d)
 #
-# print(a)
-# print(s)
+# current_date = date.today()
+# print(current_date)
+#
+# class ParentClass:
+#     def __init__(self):
+#         self.name = 'parent'
+#         self.number = 10
+#
+#     def __str__(self):
+#         return f'ParentClass Name : {self.name}, number : {self.number}'
+#
+#     def add_num(self, new_number):
+#         print('부모 : ', new_number, '만큼 더해야지')
+#         self.number = self.number + new_number
+#
+#
+# class ChildClass(ParentClass):
+#     def __init__(self):
+#         super().__init__()
+#         self.name = 'child'
+#
+#     def __str__(self):
+#         return f'ChildClass Name : {self.name}, number : {self.number}'
+#
+#     def add_num(self, new_number):
+#         print('자식 : ', '고정적으로 5 더할거야')
+#         self.number = self.number + 5
+#
+#
+# parent = ParentClass()
+# child = ChildClass()
+# print(parent)
+# print(child)
+# print('--------')
+#
+# print('7을 더하세요')
+# parent.add_num(7)
+# child.add_num(7)
+# print(parent)
+# print(child)
+#
+# from datetime import timedelta, datetime
+# from datetime import date
+#
+# td = timedelta(days=10)
+# print(td)
+#
+# d1 = date(year=2023, month=5, day=5)
+# d2 = date(year=2023, month=6, day=9)
+#
+# # 날짜의 연산자 오버로딩으로 비교 가능
+# print(d1 == d2)
+# print(d1 < d2)
+# print(d1 > d2)
+#
+# dt = datetime.today()
+#
+# formatted_datetime = dt. strftime('%B, %d, %Y')
+# print(formatted_datetime)
+#
+# # 파일 읽기
+# file_object = open('example.txt', 'r')
+#
+# content = file_object.read()
+#
+# print(content)
+#
+# file_object.close()
+#
+# # 파일 쓰기
+# file_object = open('new_example.txt', 'w')
+#
+# content = "This is a new file.\nPython is fun!"
+#
+# file_object.write(content)
+#
+# file_object.close()
+#
+# # 파일 관리
+# print("파일 열기")
+# file_object = open('example.txt', 'r')
+#
+# print("현재 파일 위치 확인")
+# position = file_object.tell()
+# print("Current Position:", position)
+#
+# print("파일 포인터 위치 이동")
+# file_object.seek(5)
+# position = file_object.tell()
+# print("New position:", position)
+# file_object.close()
+#
+# # with문 사용(close 사용하지 않아도 됨)
+# with open('example.txt', 'r') as file_object:
+#     lines = file_object.readlines()
+#     for line in lines:
+#         print('>', line.strip())
+#
+# import os
+#
+# filename = 'example.txt'
+#
+# print("파일이 존재하는지 확인하기")
+# if os.path.isfile(filename):
+#     print(f"{filename}이 존재합니다.")
+# else:
+#     print(f"{filename}이 없습니다.")
+#
+# file_object = open('list_example.txt', 'w')
+#
+# content_list = ["Python", "Java", "C++", "Javascript"]
+#
+# for item in content_list:
+#     print(file_object.tell())
+#     file_object.write(item + '\n')
+#
+# file_object.close()
+# 폴더 생성
+import os
 
-def decor(fun):
-    def inner():
-        a = fun()
-        add = a + 5
-        return add
-    return inner
+# current_directory = os.getcwd()
+# print(current_directory)
+#
+# os.mkdir('new_directory')
+#
+# os.makedirs('patent_directory/child_directory/grandchild_directory')
+#
+# os.chdir('old directory')
+# current_directory2 = os.getcwd()
+# print(current_directory2)
+#
+# with open('example.txt','w' ) as file_object:
+#     file_object.write("Hello, World!")
+#
+# print('done')
+#
+# os.rename('new_directory', 'old_directory')
+#
+# # 폴더 지우기
+# import os
+#
+# # os.rmdir('new_directory')
+# os.removedirs('patent_directory/child_directory/grandchild_directory')
 
-
-def num():
-    return 10
-
-
-result_fun = decor(num)
-print(result_fun())
-
-def decor(fun):
-    def inner():
-        a = fun()
-        add = a + 5
-        return add
-    return inner
-
-@decor
-def num():
-    return 10
-
-
-print(num())
-
-from array import *
-
-
-def show(ar):
-    print("Passed Array ar:", ar)
-    print(type(ar))
-    for i in ar:
-        print(i)
-    return ar
-
-
-print('=====')
-a = array('i', [101, 102, 103, 104])
-y = show(a)
-print("Return Array Y:", y)
-print(type(y))
+for dirpath, dirnames, filenames in os.walk('patent_directory'):
+    print(f"디렉터리 경로: {dirpath}")
+    print(f"디렉터리 이름: {dirnames}")
+    print(f"파일 이름: {filenames}")
