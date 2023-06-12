@@ -124,7 +124,20 @@
 # print('---')
 # for i, v in enumerate(a):
 #     print(i, v)
+#
+# import pprint
+#
+# pprint.pprint(locals())
 
-import pprint
+words = ['apple', 'bat', 'car', 'atom', 'book']
+by_letters = {}
 
-pprint.pprint(locals())
+for word in words:
+    letter = word[0]
+    if letter not in by_letters:
+        by_letters[letter] = [word]
+    else:
+        by_letters[letter].append(word)
+
+print(by_letters)
+print(by_letters['c'])
