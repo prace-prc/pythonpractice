@@ -76,10 +76,27 @@
 # # 부모 클래스의 메소드 사용
 # print(my_car.start())
 # print(my_car.rotate())
+#
+# # 패키지 실습
+#
+# from MyApp.Handlers.text_handler import handle_text
+#
+# input_text = "python package practice"
+# handle_text(input_text)
 
-# 패키지 실습
+# 예외처리
 
-from MyApp.Handlers.text_handler import handle_text
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Error: Division by zero")
 
-input_text = "python package practice"
-handle_text(input_text)
+print("Program continues.")
+
+try:
+    # number = int("Not a number")
+    number = 5 + "Not a number"
+except ValueError:
+    print("Error: Invalid value.")
+except TypeError:
+    print("Error: Invalid type.")
