@@ -100,14 +100,27 @@
 #     print("Error: Invalid value.")
 # except TypeError:
 #     print
+#
+# # 사용자 정의 예외 처리
+# class CustomExeption(Exception):
+#     def __init__(self, message):
+#         self.message = message
+#
+#
+# try:
+#     raise CustomExeption("This is a custom exception.")
+# except CustomExeption as e:
+#     print(f"Error: {e.message}")
 
-# 사용자 정의 예외 처리
-class CustomExeption(Exception):
-    def __init__(self, message):
-        self.message = message
+a = ['a1', 'b2', 'c3']
 
-
-try:
-    raise CustomExeption("This is a custom exception.")
-except CustomExeption as e:
-    print(f"Error: {e.message}")
+for i in range(len(a)):
+    print(i, a[i])
+print('---')
+i = 0
+for v in a:
+    print(i, v)
+    i += 1
+print('---')
+for i, v in enumerate(a):
+    print(i, v)
