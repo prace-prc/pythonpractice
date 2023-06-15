@@ -1,62 +1,38 @@
-def insertion_sort(arr, start, end):
-    for i in range(start + 1, end + 1):
-        key_item = arr[i]
-        j = i - 1
-        while j >= start and arr[j] > key_item:
-            arr[j + 1] = arr[j]
-            j -= 1
-        arr[j + 1] = key_item
+class ListNode:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
 
-def merge(arr, start, mid, end):
-    if arr[mid] <= arr[mid + 1]:
-        return
+class Stack:
+    def __init__(self):
+        self.head = None
+        self.size = 0
 
-    left = arr[start:mid + 1]
-    right = arr[mid + 1:end + 1]
+    def is_empty(self):
+        return self.size == 0
 
-    i = j = 0
-    k = start
+    def push(self, value):
+        new_node = ListNode(value)
+        new_node.next = self.head
+        self.head = new_node
+        self.size += 1
 
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            arr[k] = left[i]
-            i += 1
-        else:
-            arr[k] = right[j]
-            j += 1
-        k += 1
-
-    while i < len(left):
-        arr[k] = left[i]
-        k += 1
-        i += 1
-
-    while j < len(right):
-        arr[k] = right[j]
-        k += 1
-        j += 1
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("pop from an empty stack")
+        value = self.head.value
+        self.head = self.head.next
+        self.size -= 1
+        return value
 
 
-def timsort(arr):
-    min_run = 4
-    n = len(arr)
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.push(4)
+stack.push(5)
 
-    for start in range(0, n, min_run):
-        end = min(start + min_run - 1, n - 1)
-        insertion_sort(arr, start, end)
-
-    size = min_run
-    while size < n:
-        for start in range(0, n, size * 2):
-            mid = min(start + size - 1, n - 1)
-            end = min(start + 2 * size - 1, n - 1)
-            merge(arr, start, mid, end)
-        size *= 2
-
-    return arr
-
-
-a = ['f', 'g', 'h', 'z', 's', 'b', 'c', 'd']
-
-print(timsort(a))
+for _ in range(5):
+    print(stack.pop())
