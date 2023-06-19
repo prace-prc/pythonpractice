@@ -26,6 +26,7 @@
 #             slow = slow.next
 #             fast = fast.next.next
 #         return True
+from collections import deque
 
 # https://leetcode.com/problems/number-of-islands/submissions/974400916/
 #
@@ -50,7 +51,7 @@
 #
 #         return island_count
 
-# 깊이 우선 탐색
+
 graph = {
     'A': ['B', 'C'],
     'B': ['A', 'D', 'E'],
@@ -59,7 +60,7 @@ graph = {
     'E': ['B', 'F'],
     'F': ['C', 'E']
 }
-
+# 깊이 우선 탐색(DFS)
 visited = set()
 
 
@@ -76,3 +77,19 @@ def dfs_iterative(start_node):
 
 snode = 'A'
 dfs_iterative(snode)
+
+print('\n------')
+
+# 너비 우선 탐색(BFS)
+visited = set()
+def bfs_iterative(start_node):
+    queue = deque([start_node])
+
+    while queue:
+        node = queue.popleft()
+        if node not in visited:
+            print(node, end=' ')
+            visited.add(node)
+            queue.extend(graph[node])
+
+bfs_iterative(snode)
