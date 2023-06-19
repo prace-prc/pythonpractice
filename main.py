@@ -50,46 +50,59 @@ from collections import deque
 #                     island_count += 1
 #
 #         return island_count
+#
+#
+# graph = {
+#     'A': ['B', 'C'],
+#     'B': ['A', 'D', 'E'],
+#     'C': ['A', 'F'],
+#     'D': ['B'],
+#     'E': ['B', 'F'],
+#     'F': ['C', 'E']
+# }
+# # 깊이 우선 탐색(DFS)
+# visited = set()
+#
+#
+# def dfs_iterative(start_node):
+#     stack = [start_node]
+#
+#     while stack:
+#         node = stack.pop()
+#         if node not in visited:
+#             print(node, end=' ')
+#             visited.add(node)
+#             stack.extend(reversed(graph[node]))
+#
+#
+# snode = 'A'
+# dfs_iterative(snode)
+#
+# print('\n------')
+#
+# # 너비 우선 탐색(BFS)
+# visited = set()
+# def bfs_iterative(start_node):
+#     queue = deque([start_node])
+#
+#     while queue:
+#         node = queue.popleft()
+#         if node not in visited:
+#             print(node, end=' ')
+#             visited.add(node)
+#             queue.extend(graph[node])
+#
+# bfs_iterative(snode)
 
+# 이미지 파서 만들기
 
-graph = {
-    'A': ['B', 'C'],
-    'B': ['A', 'D', 'E'],
-    'C': ['A', 'F'],
-    'D': ['B'],
-    'E': ['B', 'F'],
-    'F': ['C', 'E']
-}
-# 깊이 우선 탐색(DFS)
-visited = set()
+import urllib.request
 
+url = 'https://www.google.com'
 
-def dfs_iterative(start_node):
-    stack = [start_node]
+request = urllib.request.Request(url)
+response = urllib.request.urlopen(request)
 
-    while stack:
-        node = stack.pop()
-        if node not in visited:
-            print(node, end=' ')
-            visited.add(node)
-            stack.extend(reversed(graph[node]))
+html = response.read()
 
-
-snode = 'A'
-dfs_iterative(snode)
-
-print('\n------')
-
-# 너비 우선 탐색(BFS)
-visited = set()
-def bfs_iterative(start_node):
-    queue = deque([start_node])
-
-    while queue:
-        node = queue.popleft()
-        if node not in visited:
-            print(node, end=' ')
-            visited.add(node)
-            queue.extend(graph[node])
-
-bfs_iterative(snode)
+print(html)
