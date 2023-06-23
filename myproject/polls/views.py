@@ -8,6 +8,7 @@ from polls.models import Question, Choice
 
 logger = logging.getLogger(__name__)
 
+
 # Create your views here.
 def index(request):
     latest_question_list = Question.objects.all().order_by('-pub_date')[:5]
