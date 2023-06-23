@@ -29,6 +29,8 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    "books.apps.BooksConfig"
+    # #books",
     "polls.apps.PollsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
