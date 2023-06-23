@@ -10,8 +10,13 @@
     </title>
 </head>
 <body>
-    <div>
-        {% block content %}{% endblock %}
+    <div id="sidebar">
+        {% block sidebar %}
+            <ul>
+                <li><a href="/">Project_Home</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        {% endblock sidebar %}
     </div>
 </body>
 </html>
