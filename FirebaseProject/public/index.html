@@ -22,77 +22,6 @@
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-        body {
-            background: #ECEFF1;
-            color: rgba(0, 0, 0, 0.87);
-            font-family: Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        #message {
-            background: white;
-            max-width: 360px;
-            margin: 100px auto 16px;
-            padding: 32px 24px;
-            border-radius: 3px;
-        }
-
-        #message h2 {
-            color: #ffa100;
-            font-weight: bold;
-            font-size: 16px;
-            margin: 0 0 8px;
-        }
-
-        #message h1 {
-            font-size: 22px;
-            font-weight: 300;
-            color: rgba(0, 0, 0, 0.6);
-            margin: 0 0 16px;
-        }
-
-        #message p {
-            line-height: 140%;
-            margin: 16px 0 24px;
-            font-size: 14px;
-        }
-
-        #message a {
-            display: block;
-            text-align: center;
-            background: #039be5;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: white;
-            padding: 16px;
-            border-radius: 4px;
-        }
-
-        #message, #message a {
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        }
-
-        #load {
-            color: rgba(0, 0, 0, 0.4);
-            text-align: center;
-            font-size: 13px;
-        }
-
-        @media (max-width: 600px) {
-            body, #message {
-                margin-top: 0;
-                background: white;
-                box-shadow: none;
-            }
-
-            body {
-                border-top: 16px solid #ffa100;
-            }
-        }
-    </style>
 </head>
 <body>
 <div id="nologin">
@@ -109,53 +38,66 @@
         <button type="submit">회원가입</button>
     </form>
 </div>
-
 <div id="loggedIn" style="display: none">
     <button onclick="logout()">로그아웃</button>
 </div>
-<div class="container">
-    <form id="book-form">
-        <div style="margin: 10px;">
-            <input type="text" id="book-title">
-            <input type="submit" id="등록">
-        </div>
+<div>
+    <h1>파일 업로드</h1>
+    <form id="file-form">
+        <input type="file" id="file-input">
+        <input type="submit" value="등록">
     </form>
-    <ul id="book-list" style="max-height: 400px; "></ul>
 </div>
+<div class="container">
+    <div style="margin: 10px;">
+        <form id="book-form">
+            <input type="text" id="book-title">
+            <input type="submit" value="등록">
+        </form>
+    </div>
+    <ul id="book-list" style="max-height: 400px; overflow-y: scroll; display: flex; flex-direction: column-reverse;">
+    </ul>
+</div>
+
 <script>
-    console.log(1);
     document.addEventListener('DOMContentLoaded', async function () {
-        console.log(2);
-        const loadEl = document.querySelector('#load');
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
+        // 파일 업로드
+        const fileForm = document.getElementById('file-form');
+        const fileInput = document.getElementById('file-input')
+        fileForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            console.log('파일 업로드', fileInput);
+            const file = fileInput.files[0]
+            if (!file) return;
+            console.log('진행')
+            try {
+                const storageRef = firebase.storage().ref('images');
+                console.log('storageRef', storageRef);
+                const snapshot = await storageRef.child(file.name).put(file);
+                console.log('업로드 완료');
+                const url = await snapshot.ref.getDownloadURL();
+                console.log('이미지 URL:', url);
+            } catch (e) {
+                console.log(e);
+            }
+        })
 
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
 
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        // async 컬렉션 호출 구문
+        // async 컬랙션 호출 구문
         const fulfilled = await firebase.firestore().collection('books').orderBy('title').get();
-        console.log(1, fulfilled.docs.map(d => d.data().title));
+        console.log('1', fulfilled.docs.map(d => d.data().title));
 
-        // 컬렉션 콜백 호출 구문, 위와 같음
-        firebase.firestore().collection('books').orderBy('title').onSnapshot((fulfilled) => {
+        // 컬랙션 콜백 호출 구문 위와 동일
+        firebase.firestore().collection('books').orderBy('title').get().then((fulfilled) => {
             console.log('2', fulfilled.docs.map(d => d.data().title));
         })
 
-        // 자동으로 새로운 데이터를 갱신해줄 onSnapshot
-        firebase.firestore().collection('books').orderBy('title').onSnapshot((fulfilled) => {
+
+        // 자동으로 새로운 데이터를 갱신해줌 onSnapshot
+        firebase.firestore().collection('books').orderBy('timestamp', 'desc').onSnapshot((fulfilled) => {
             console.log('snapshot', fulfilled.docs.map(d => d.data().title));
-            const ulElement = document.getElementById('book-list');
+            const ulElement = document.getElementById('book-list')
             fulfilled.docs.forEach(d => {
                 const checkElement = document.getElementById(d.id);
                 if (!checkElement) {
@@ -171,43 +113,44 @@
         const bookTitle = document.getElementById('book-title');
         bookForm.addEventListener('submit', async function (e) {
             e.preventDefault();
-            console.log('책 등록', bookTitle.value);
+            console.log('책 등록', bookTitle.value, firebase.auth().currentUser.uid);
             const docRef = firebase.firestore().collection('books').doc();
             await docRef.set({
                 title: bookTitle.value,
-                userId: firebase.auth().currentUser().uid,
+                userId: firebase.auth().currentUser.uid,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             });
         })
 
         // 회원 인증시 이벤트 처리
-        firebase.auth().onAuthStateChanged(user => {
+        firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
-                console.log('로그인 되었습니다')
+                console.log('로그인 되었습니다.')
                 const loginComponent = document.getElementById('nologin');
-                const logoutComponent = document.getElementById('loggedIn')
+                const logoutComponent = document.getElementById('loggedIn');
                 loginComponent.style.display = 'none';
                 logoutComponent.style.display = null;
             } else {
-                console.log('로그인이 필요합니다')
+                console.log('로그인이 필요합니다.')
                 const loginComponent = document.getElementById('nologin');
-                const logoutComponent = document.getElementById('loggedIn')
+                const logoutComponent = document.getElementById('loggedIn');
                 loginComponent.style.display = null;
                 logoutComponent.style.display = 'none';
             }
-        });
-        // 회원 인증 여부
+        })
+
+        // 페이지 로딩시 인증여부 확인
         if (firebase.auth().currentUser) {
-            //인증회원
-            console.log('로그인 되었습니다')
+            // 인증회원
+            console.log('로그인 되었습니다.')
             const loginComponent = document.getElementById('nologin');
-            const logoutComponent = document.getElementById('loggedIn')
+            const logoutComponent = document.getElementById('loggedIn');
             loginComponent.style.display = 'none';
             logoutComponent.style.display = null;
         } else {
-            console.log('로그인이 필요합니다')
+            console.log('로그인이 필요합니다.')
             const loginComponent = document.getElementById('nologin');
-            const logoutComponent = document.getElementById('loggedIn')
+            const logoutComponent = document.getElementById('loggedIn');
             loginComponent.style.display = null;
             logoutComponent.style.display = 'none';
         }
@@ -219,36 +162,33 @@
 
         signupForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-
             const email = signupEmail.value;
             const password = signupPassword.value;
             try {
-                console.log('HERE!!', firebase.auth);
+                console.log('HERE!!', firebase.auth());
                 console.log('email', email, 'password', password);
                 await firebase.auth().createUserWithEmailAndPassword(email, password);
             } catch (err) {
                 console.error(err);
             }
         });
-        // 로그인
 
-        const loginForm = document.getElementById('login-form')
-        const loginEmail = document.getElementById('login-email')
-        const loginPassword = document.getElementById('login-password')
+        // 로그인
+        const loginForm = document.getElementById('login-form');
+        const loginEmail = document.getElementById('login-email');
+        const loginPassword = document.getElementById('login-password');
 
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-
             const email = loginEmail.value;
             const password = loginPassword.value;
             try {
-                console.log('HERE!!', firebase.auth);
-                console.log('email', email, 'password', password);
                 await firebase.auth().signInWithEmailAndPassword(email, password);
-            } catch (err) {
-                console.error(err);
+            } catch (e) {
+                console.log(e);
             }
         });
+
     });
 
     function logout() {
