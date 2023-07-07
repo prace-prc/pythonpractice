@@ -114,13 +114,13 @@
     <button onclick="logout()">로그아웃</button>
 </div>
 <div class="container">
-    <ul id="book-list"></ul>
     <form id="book-form">
         <div style="margin: 10px;">
             <input type="text" id="book-title">
             <input type="submit" id="등록">
         </div>
     </form>
+    <ul id="book-list" style="max-height: 400px; "></ul>
 </div>
 <script>
     console.log(1);
@@ -173,7 +173,11 @@
             e.preventDefault();
             console.log('책 등록', bookTitle.value);
             const docRef = firebase.firestore().collection('books').doc();
-            await docRef.set({title: bookTitle.value})
+            await docRef.set({
+                title: bookTitle.value,
+                userId: firebase.auth().currentUser().uid,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            });
         })
 
         // 회원 인증시 이벤트 처리
