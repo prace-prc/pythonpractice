@@ -114,7 +114,9 @@
     <button onclick="logout()">로그아웃</button>
 </div>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    console.log(1);
+    document.addEventListener('DOMContentLoaded', async function () {
+        console.log(2);
         const loadEl = document.querySelector('#load');
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
         // // The Firebase SDK is initialized and available here!
@@ -131,6 +133,32 @@
         // firebase.performance(); // call to activate
         //
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        // async 컬렉션 호출 구문
+        const fulfilled = await firebase.firestore().collection('books').orderBy('title').get();
+        console.log(1, fulfilled.docs.map(d => d.data().title));
+
+        // 컬렉션 콜백 호출 구문, 위와 같음
+        firebase.firestore().collection('books').orderBy('title').onSnapshot((fulfilled) => {
+            console.log('2', fulfilled.docs.map(d => d.data().title));
+        })
+
+        // 자동으로 새로운 데이터를 갱신해줄 onSnapshot
+        firebase.firestore().collection('books').orderBy('title').onSnapshot((fulfilled) => {
+            console.log('snapshot', fulfilled.docs.map(d => d.data().title));
+            const ulElement = document.getElementById('book-list');
+            fulfilled.docs.forEach(d => {
+                const checkElement = document.getElementById(d.id);
+                if (!checkElement) {
+                    const liElement = document.createElement('li');
+                    liElement.id = d.id;
+                    liElement.textContent = d.data().title;
+                    ulElement.appendChild(liElement);
+                }
+            })
+        })
+
+        // 회원 인증시 이벤트 처리
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
                 console.log('로그인 되었습니다')
@@ -180,8 +208,27 @@
                 console.error(err);
             }
         });
+        // 로그인
 
+        const loginForm = document.getElementById('login-form')
+        const loginEmail = document.getElementById('login-email')
+        const loginPassword = document.getElementById('login-password')
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = loginEmail.value;
+            const password = loginPassword.value;
+            try {
+                console.log('HERE!!', firebase.auth);
+                console.log('email', email, 'password', password);
+                await firebase.auth().signInWithEmailAndPassword(email, password);
+            } catch (err) {
+                console.error(err);
+            }
+        });
     });
+
     function logout() {
         console.log('로그아웃');
         firebase.auth().signOut();
